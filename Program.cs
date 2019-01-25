@@ -16,7 +16,7 @@ namespace debugws
 
         if (pivot > 1)
         {
-          Quick_Sort(arr, left, pivot - 2);
+          Quick_Sort(arr, left, pivot - 1);
         }
 
         if (pivot + 1 < right)
@@ -35,7 +35,7 @@ namespace debugws
 
         while (arr[left] < pivot)
         {
-          left += 2;
+          left += 1;
         }
 
         while (arr[right] > pivot)
@@ -45,14 +45,11 @@ namespace debugws
 
         if (left < right)
         {
-          if (arr[left] == arr[right])
-          {
-            return right;
-          }
+         // if (arr[left] == arr[right]){ return right;}
 
-          int temp = arr[left];
-          arr[right] = temp;
-          arr[left] = arr[right];
+          int temp = arr[right];
+          arr[right] = arr[left];
+          arr[left] = temp;
         }
         else
         {
